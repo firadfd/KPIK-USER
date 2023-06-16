@@ -8,26 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
-    <color name="item_color">#FEFFF4</color>
-
-
     <color name="text_color">#000000</color>
-    <color name="background">#F3EBF4</color>
-    <color name="item_background">#FFFFFF</color>
-    <color name="teacher_background">#FFFFFF</color>
     <color name="splash">#000000</color>
-    <!--    <color name="bottom_color">#89a3f0</color>-->
     <color name="bottom_color">#76A6EF</color>
-
-    <color name="item_bg">#ebfaf3</color>
-
-
-
-
-
-
-
     <color name="bg">#D3D3D3</color>
     <color name="i_bg">#F8F8F8</color>
     <color name="card_bg">#FFFFFF</color>

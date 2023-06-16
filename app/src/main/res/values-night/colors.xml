@@ -2,17 +2,9 @@
 <resources>
 
     <color name="text_color">#FFFFFF</color>
-    <color name="background">#000000</color>
-    <color name="item_background">#242526</color>
+
     <color name="splash">#000000</color>
-    <!--    <color name="bottom_color">#708ee6</color>-->
-    <color name="bottom_color">#76A6EF</color>
-    <color name="item_bg">#242526</color>
-    <color name="teacher_background">#464a48</color>
-
-
-
-
+    <color name="bottom_color">#75EFB6</color>
     <color name="bg">#000000</color>
     <color name="i_bg">#131615</color>
     <color name="card_bg">#303435</color>

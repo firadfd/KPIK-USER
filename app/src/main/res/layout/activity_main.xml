@@ -6,48 +6,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <RelativeLayout
-        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <fragment
-            android:id="@+id/fragmentLayout"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/bottom_color"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/drawerLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/mobile_navigation" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/appBar"
             android:background="@color/bg"
-            app:cardCornerRadius="10dp">
+            android:fitsSystemWindows="true">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavId"
+            <fragment
+                android:id="@+id/fragmentLayout"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/mobile_navigation" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_gravity="center"
-                android:background="@color/bottom_color"
-                android:saveEnabled="true"
-                app:itemIconTint="@color/black"
-                app:itemRippleColor="@color/black"
-                app:itemTextColor="@color/black"
-                app:labelVisibilityMode="selected"
-                app:menu="@menu/bottom_menu" />
+                android:background="@color/bg"
+                app:cardCornerRadius="10dp">
 
-        </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/bottom_color"
+                    android:saveEnabled="true"
+                    app:itemIconTint="@color/black"
+                    app:itemRippleColor="@color/black"
+                    app:itemTextColor="@color/black"
+                    app:labelVisibilityMode="selected"
+                    app:menu="@menu/bottom_menu" />
+
+            </com.google.android.material.card.MaterialCardView>
 
 
+        </RelativeLayout>
     </RelativeLayout>
 
 

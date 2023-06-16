@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -53,20 +54,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        ColorDrawable color = new ColorDrawable(Color.parseColor("#76A6EF"));
-        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(color);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         FirebaseMessaging.getInstance().subscribeToTopic("notice");
         FirebaseMessaging.getInstance().subscribeToTopic("pdf");
 
-        sharedPreferences = this.getSharedPreferences("theme", MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        bottomNavigationView = findViewById(R.id.bottomNavId);
-        navController = Navigation.findNavController(this, R.id.fragmentLayout);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawerLayoutId);
         navigationView = findViewById(R.id.drawerId);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        bottomNavigationView = findViewById(R.id.bottomNavId);
+
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigationHome, R.id.navigationNotice, R.id.navigationPdfNotice, R.id.navigationTeachers,
+                R.id.navigationDepartments)
+                .setDrawerLayout(drawerLayout)
+                .build();
+
+        navController = Navigation.findNavController(this, R.id.fragmentLayout);
+
+        NavigationUI.setupActionBarWithNavController(MainActivity.this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+//        toolbar.setNavigationOnClickListener(v -> {
+//            if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+//                drawerLayout.closeDrawer(GravityCompat.START);
+//            } else {
+//                drawerLayout.openDrawer(GravityCompat.START);
+//            }
+//        });
+//        toolbar.setNavigationIcon(R.drawable.toggle_bars);
+
+
+
+        sharedPreferences = this.getSharedPreferences("theme", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+
+
+
+
+
+
         switch (getCheckedItem()) {
             case 0:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
@@ -78,17 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
         }
-
-
-        appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigationHome, R.id.navigationNotice, R.id.navigationPdfNotice, R.id.navigationTeachers,
-                R.id.navigationDepartments, R.id.navigationCaptain)
-                .setDrawerLayout(drawerLayout)
-                .build();
-
-
-        NavigationUI.setupActionBarWithNavController(MainActivity.this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
-        NavigationUI.setupWithNavController(navigationView, navController);
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -184,7 +203,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        return NavigationUI.navigateUp(navController, appBarConfiguration);
+        NavController navController = Navigation.findNavController(this,R.id.fragmentLayout);
+        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
+//        return NavigationUI.navigateUp(navController, appBarConfiguration);
     }
 
     private void setCheckedItem(int i) {
