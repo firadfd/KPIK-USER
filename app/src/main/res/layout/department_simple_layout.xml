@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/card_bg"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/dName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins"
+            android:text="name"
+            android:textAlignment="textStart"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dName"
+            android:layout_margin="5dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins"
+            android:text="Teachers"
+            android:textAlignment="textStart"
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dtSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dTeacher"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:text="seat"
+            android:textAlignment="textStart"
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dLabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dtSeat"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:text="labs"
+            android:textAlignment="textStart"
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

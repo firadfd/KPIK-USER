@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="?attr/actionBarSize"
+    android:background="@color/bg"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/carouselImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dp"
+                    android:layout_marginBottom="05dp">
+
+                    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                        android:id="@+id/carousel"
+                        android:layout_width="match_parent"
+                        android:layout_height="256dp"
+                        android:layout_alignParentTop="true"
+                        app:autoPlay="true"
+                        app:autoPlayDelay="4000"
+                        app:imagePlaceholder="@drawable/kpik__first"
+                        app:imageScaleType="fitXY"
+                        app:infiniteCarousel="true"
+                        app:showCaption="true"
+                        app:showIndicator="true"
+                        app:showNavigationButtons="false"
+                        app:touchToPause="true" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/homeDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/carouselImage"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/i_bg"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/card_bg"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="1"
+                            android:padding="05dp"
+                            android:text="@string/collage_name"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_color"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/poppins"
+                            android:justificationMode="inter_word"
+                            android:text="@string/collage_details"
+                            android:textColor="@color/text_color"
+                            android:textAlignment="center"
+                            android:textIsSelectable="true"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/homeDepartments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homeDetails"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/i_bg"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/dpt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/department"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_color"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@id/dpt"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/text_color" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/view"
+                            android:background="@color/i_bg"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cmt"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goCmt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgCmt"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/computer" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgCmt"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="Computer"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/civil"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goCivil"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgCivil"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/civil" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgCivil"
+                                            android:fontFamily="@font/solway"
+                                            android:text="Civil"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/ent"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goEct"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgElectrical"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/electrical" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgElectrical"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="Electrical"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/aidt"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goAidt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgAidt"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/architecture" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgAidt"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="AIDT"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/ents"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goEnt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgEnts"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/electronics" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgEnts"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="Electronics"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/mec"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goMt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgmt"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/mechanical" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgmt"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="Mechanical"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cnt"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_margin="10dp"
+                                    android:backgroundTint="@color/card_bg"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/goCnt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgCnt"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_margin="10dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/construction" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerInParent="true"
+                                            android:layout_toEndOf="@id/imgCnt"
+                                            android:fontFamily="@font/solway"
+                                            android:maxLines="1"
+                                            android:text="Construction"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/text_color"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/homeContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/homeDepartments"
+                    android:backgroundTint="@color/card_bg"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/contact"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_color"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/text_color" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/contact_details"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:elevation="5dp"
+                            app:cardCornerRadius="10dp">
+
+                            <ImageView
+                                android:id="@+id/map"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/location" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

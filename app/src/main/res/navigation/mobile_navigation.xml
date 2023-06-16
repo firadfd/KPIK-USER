@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigationHome"
+    tools:ignore="InvalidNavigation">
+
+    <fragment
+        android:id="@+id/navigationHome"
+        android:name="fd.firad.kpik.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+<!--        <action-->
+<!--            android:id="@+id/action_navigationHome_to_navigationDepartments"-->
+<!--            app:destination="@id/navigationDepartments" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/navigationNotice"
+        android:name="fd.firad.kpik.ui.notices.NoticeFragment"
+        android:label="Notice"
+        tools:layout="@layout/fragment_notice" />
+    <fragment
+        android:id="@+id/navigationPdfNotice"
+        android:name="fd.firad.kpik.ui.pdfnotice.PdfNotice"
+        android:label="Pdf"
+        tools:layout="@layout/fragment_pdfnotice" />
+    <fragment
+        android:id="@+id/navigationTeachers"
+        android:name="fd.firad.kpik.ui.teachers.TeachersFragment"
+        android:label="Teachers"
+        tools:layout="@layout/fragment_teachers" />
+
+    <fragment
+        android:id="@+id/navigationCaptain"
+        android:name="fd.firad.kpik.ui.captain.CaptainFragment"
+        android:label="Class Representative"
+        tools:layout="@layout/fragment_captain" />
+    <fragment
+        android:id="@+id/navigationDepartments"
+        android:name="fd.firad.kpik.ui.departments.DepartmentsFragment"
+        android:label="Departments"
+        tools:layout="@layout/fragment_departments" />
+    <fragment
+        android:id="@+id/navigationWebsite"
+        android:name="fd.firad.kpik.ui.website.WebsiteFragment"
+        android:label="Website"
+        tools:layout="@layout/fragment_website" />
+    <fragment
+        android:id="@+id/navigationDeveloper"
+        android:name="fd.firad.kpik.ui.dev.DeveloperFragment"
+        android:label="Developer"
+        tools:layout="@layout/fragment_developer" />
+    <fragment
+        android:id="@+id/privacy"
+        android:name="fd.firad.kpik.ui.privacy.PrivacyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy" />
+
+
+</navigation>

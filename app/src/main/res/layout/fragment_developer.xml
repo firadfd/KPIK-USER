@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="?attr/actionBarSize"
+    android:backgroundTint="@color/bg"
+    tools:context=".ui.dev.DeveloperFragment">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/i_bg"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:id="@+id/contact1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details1"
+            android:fontFamily="@font/roboto"
+            android:justificationMode="inter_word"
+            android:padding="10dp"
+            android:text="@string/bug"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="05dp"
+                android:backgroundTint="@color/card_bg"
+                android:elevation="5dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img1"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/dev" />
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/developer_name1"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/details1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name1"
+                        android:layout_toEndOf="@id/img1"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/details1"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/details1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toEndOf="@id/img1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/fb1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/fb" />
+
+                        <ImageView
+                            android:id="@+id/sendMail1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/gmail" />
+
+
+                        <ImageView
+                            android:id="@+id/linkedin1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/linkedin" />
+
+                        <ImageView
+                            android:id="@+id/github1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/github" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="05dp"
+                android:backgroundTint="@color/card_bg"
+                android:elevation="5dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/dev" />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img2"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/developer_name2"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/details2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name2"
+                        android:layout_toEndOf="@id/img2"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/details2"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/details2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toEndOf="@id/img2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/fb2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/fb" />
+
+                        <ImageView
+                            android:id="@+id/sendMail2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/gmail" />
+
+
+                        <ImageView
+                            android:id="@+id/linkedin2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/linkedin" />
+
+                        <ImageView
+                            android:id="@+id/github2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/github" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="05dp"
+                android:backgroundTint="@color/card_bg"
+                android:elevation="5dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img3"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/dev" />
+
+                    <TextView
+                        android:id="@+id/name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img3"
+                        android:maxLines="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/developer_name3"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/details3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name3"
+                        android:layout_toEndOf="@id/img3"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/details3"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/details3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toEndOf="@id/img3"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/fb3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/fb" />
+
+                        <ImageView
+                            android:id="@+id/sendMail3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/gmail" />
+
+
+                        <ImageView
+                            android:id="@+id/linkedin3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/linkedin" />
+
+                        <ImageView
+                            android:id="@+id/github3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="05dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/github" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

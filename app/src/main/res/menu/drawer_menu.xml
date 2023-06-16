@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/navigationHome"
+        android:icon="@drawable/li_home"
+        android:title="Home" />
+
+    <item
+        android:id="@id/navigationNotice"
+        android:icon="@drawable/li_notice"
+        android:title="Notice" />
+
+    <item
+        android:id="@id/navigationPdfNotice"
+        android:icon="@drawable/li_pdf"
+        android:title="Pdf" />
+
+    <item
+        android:id="@id/navigationTeachers"
+        android:icon="@drawable/li_teacher"
+        android:title="Teachers" />
+
+    <item
+        android:id="@id/navigationDepartments"
+        android:icon="@drawable/li_department"
+        android:title="Departments" />
+
+    <item
+        android:id="@id/navigationCaptain"
+        android:icon="@drawable/li_captain"
+        android:title="Class Representative" />
+
+    <item
+        android:id="@id/navigationWebsite"
+        android:icon="@drawable/li_website"
+        android:title="Website" />
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="Others">
+
+            <menu>
+                <item
+                    android:id="@+id/theme"
+                    android:icon="@drawable/light_mode"
+                    android:title="Theme" />
+                <item
+                    android:id="@+id/share"
+                    android:icon="@drawable/share"
+                    android:title="Share App" />
+                <item
+                    android:id="@id/privacy"
+                    android:icon="@drawable/li_privacy"
+                    android:title="Privacy Policy" />
+
+            </menu>
+
+        </item>
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="Feedback">
+
+            <menu>
+                <item
+                    android:id="@+id/rate"
+                    android:icon="@drawable/rate"
+                    android:title="Rate this app" />
+                <item
+                    android:id="@id/navigationDeveloper"
+                    android:icon="@drawable/coding"
+                    android:title="Developers" />
+
+            </menu>
+
+        </item>
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">KPIK</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">open drawer</string>
+    <string name="close">close drawer</string>
+    <string name="collage_name">Kurigram Polytechnic Institute</string>
+    <string name="collage_details">Kurigram Polytechnic Institute is one of the oldest and largest technical educational institutions in Bangladesh. The journey started in 2006 under the Directorate of Technical Education, Ministry of Education with four departments. At present engineering diploma is running in 7 subjects. The campus of Kurigram Polytechnic Institute is spread over an area of ​​a little over two acres.
+There are several buildings here. These include a five-storied administrative building, two five-storied and two-storied academic buildings, 26 classrooms, an IT center with WIFI facility, Shaheed Minar, a library, well-equipped workshops and labs, conference rooms, two student common rooms, a Medical Centre, Cycle Garage and a Power Supply Substation.
+There are no residential facilities for students or teachers, but there are residences for principals and staff. At present four-year diploma courses are running in total of seven subjects.
+    </string>
+    <string name="department">Departments</string>
+    <string name="contact">Contact Info</string>
+    <string name="developer_name1">MD.Firaduzzaman</string>
+    <string name="details1">Android Developer\n Session: 19–20 \n Department: Computer</string>
+    <string name="developer_name2">MD.Riead Mia</string>
+    <string name="details2">Graphic Designer\n Session: 19–20 \n Department: Computer</string>
+    <string name="developer_name3">MD. Nazrul Islam Rony</string>
+    <string name="details3">Web Developer\n Session: 19–20 \n Department: Computer</string>
+    <string name="bug">If anyone find any bug or any problem in this app. Feel free to contact us</string>
+    <string name="other_details"> \n </string>
+    <string name="contact_details">কৃষ্ণপুর, সেন্ট্রাল জেইল রোড, কুড়িগ্রাম \n ফোন: 02–589950760 \n ইমেইল : principal@kpik.gov.bd</string>
+    <string name="privacy_policy">https://www.freeprivacypolicy.com/live/2820cad3–11d5-4745-a8f6-4862f1990aa5</string>
+    <string name="appLink">https://galaxystore.samsung.com/detail/fd.firad.kpik</string>
+    <string-array name="theme">
+        <item>System Default</item>
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+</resources>
