@@ -5,8 +5,6 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -29,33 +27,37 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.util.Objects;
-
-import fd.firad.kpik.BuildConfig;
 import fd.firad.kpik.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     private BottomNavigationView bottomNavigationView;
     private NavController navController;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private AppBarConfiguration appBarConfiguration;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+
     private int checkedItem;
     private String selected;
     private final String CHECKEDITEM = "checked_item";
+
 
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPreferences = this.getSharedPreferences("theme", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
         setContentView(R.layout.activity_main);
 
         FirebaseMessaging.getInstance().subscribeToTopic("notice");
         FirebaseMessaging.getInstance().subscribeToTopic("pdf");
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,40 +76,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(MainActivity.this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
-
-//        toolbar.setNavigationOnClickListener(v -> {
-//            if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
-//                drawerLayout.closeDrawer(GravityCompat.START);
-//            } else {
-//                drawerLayout.openDrawer(GravityCompat.START);
-//            }
-//        });
-//        toolbar.setNavigationIcon(R.drawable.toggle_bars);
-
-
-
-        sharedPreferences = this.getSharedPreferences("theme", MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-
-
-
-
-
-
-
-        switch (getCheckedItem()) {
-            case 0:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
-            case 1:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case 2:
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-        }
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -129,28 +97,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    private void rateApp() {
-        Uri uri = Uri.parse("market://details?id=" + getPackageName());
-        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
-        try {
-            startActivity(myAppLinkToMarket);
-        } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void shareApp() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Kurigram Polytechnic Institute");
-        sendIntent.putExtra(Intent.EXTRA_TEXT,
-                "Hey check out KPIK app at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
-        sendIntent.setType("text/plain");
-        startActivity(Intent.createChooser(sendIntent, "Share app via"));
-    }
-
-
     private void changeTheme() {
 
         String[] themes = this.getResources().getStringArray(R.array.theme);
@@ -196,22 +142,47 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
     }
-
-    private int getCheckedItem() {
-        return sharedPreferences.getInt(CHECKEDITEM, 0);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this,R.id.fragmentLayout);
-        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
-//        return NavigationUI.navigateUp(navController, appBarConfiguration);
-    }
-
     private void setCheckedItem(int i) {
         editor.putInt(CHECKEDITEM, i);
         editor.apply();
     }
+
+    private int getCheckedItem() {
+        return sharedPreferences.getInt(CHECKEDITEM,0);
+
+    }
+    private void rateApp() {
+        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        try {
+            startActivity(myAppLinkToMarket);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void shareApp() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Kurigram Polytechnic Institute");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,
+                "Hey check out KPIK app at: https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, "Share app via"));
+    }
+
+
+
+
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.fragmentLayout);
+        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
+//        return NavigationUI.navigateUp(navController, appBarConfiguration);
+    }
+
+
 
     @Override
     public void onBackPressed() {
